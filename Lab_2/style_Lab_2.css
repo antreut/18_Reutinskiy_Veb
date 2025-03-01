@@ -1,0 +1,190 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: #605d50a3;
+}
+
+footer {
+    text-align: center;
+    padding: 20px;
+    background-color: #7161ff;
+    color: white;
+    width: 100%;
+    position: relative;
+    bottom: 0;
+}
+
+.container {
+    display: flex;
+    width: 100%;
+}
+
+.ads {
+    width: 20%;
+    min-width: 150px;
+    max-width: 300px;
+    background-color: #618ae2a3;
+    padding: 11px;
+    display: flex;
+    flex-direction: column;
+    position: relative;
+    height: auto;
+}
+
+.left-ads {
+    border-right: 2px solid #605d50a3;
+}
+
+.right-ads {
+    border-left: 2px solid #605d50a3;
+}
+
+.ad {
+    background: #60658d;
+    color: white;
+    padding: 20px;
+    border-radius: 5px;
+    font-weight: bold;
+    margin: 5px 0;
+}
+
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    perspective: 1000px;
+    margin-bottom: 20px;
+}
+
+.header-content {
+    background: #c1d9cc;
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    background: #c1d9cc;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    padding: 20px;
+    width: 80%;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-control {
+    background-color: rgba(255, 255, 255, 0.8);
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.reasons h2, .reviews h2, .purchase h2 {
+    color: #000000;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.review-img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+.buy-button {
+    background-color: #1df500;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.countdown {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+.notification {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: white;
+    border: 2px solid #ff6f61;
+    border-radius: 10px;
+    padding: 20px;
+    display: none;
+    z-index: 1000;
+}
+
+.notification-content {
+    text-align: center;
+}
+
+.close {
+    position: absolute;
+    top: 10px;
+    right: 10px;
+    cursor: pointer;
+    font-size: 20px;
+}
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 18px;
+    }
+
+    .carousel img {
+        height: auto;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    .ad {
+        font-size: 14px;
+    }
+}

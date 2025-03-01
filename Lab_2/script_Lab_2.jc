@@ -1,0 +1,46 @@
+let currentSlide = 0;
+const slides = document.querySelectorAll('.carousel-item');
+const totalSlides = slides.length;
+
+document.querySelector('.next').addEventListener('click', () => {
+    currentSlide = (currentSlide + 1) % totalSlides;
+    updateCarousel();
+});
+
+document.querySelector('.prev').addEventListener('click', () => {
+    currentSlide = (currentSlide - 1 + totalSlides) % totalSlides;
+    updateCarousel();
+});
+
+function updateCarousel() {
+    const carouselWrapper = document.querySelector('.carousel-wrapper');
+    carouselWrapper.style.transform = `translateX(-${currentSlide * 100}%)`;
+}
+
+let countdownTime = 600;
+const countdownElement = document.getElementById('countdown');
+
+const countdownInterval = setInterval(() => {
+    if (countdownTime <= 0) {
+        clearInterval(countdownInterval);
+        alert("Время вышло!");
+        return;
+    }
+    countdownTime--;
+    const minutes = Math.floor(countdownTime / 60);
+    const seconds = countdownTime % 60;
+    countdownElement.textContent = `Осталось: ${minutes}:${seconds < 10 ? '0' : ''}${seconds}`;
+}, 1000);
+
+const notification = document.getElementById('notification');
+const closeNotification = document.getElementById('close-notification');
+
+setInterval(() => {
+    notification.style.display = 'block';
+}, 5000);
+
+closeNotification.addEventListener('click', () => {
+    notification.style.display = 'none';
+});
+
+notification.style.display = 'block';
