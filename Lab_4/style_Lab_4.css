@@ -1,0 +1,276 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    background-color: rgba(96, 93, 80, 0.64);
+
+}
+main {
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.header {
+    perspective: 1000px;
+    margin-bottom: 20px;
+    width: 80%;
+}
+
+.header-content {
+    background: #d4d9d6;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    color: rgb(0, 0, 0);
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+section {
+    background: #d4d9d6;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    margin: 20px 0;
+    padding: 20px;
+    width: 80%;
+}
+
+.carousel {
+    position: relative;
+    overflow: hidden;
+    width: 80%;
+    margin-bottom: 20px;
+}
+
+.carousel-wrapper {
+    display: flex;
+    transition: transform 0.5s ease-in-out;
+}
+
+.carousel-item {
+    min-width: 100%;
+}
+
+.carousel img {
+    width: 100%;
+    border-radius: 10px;
+}
+
+.carousel-control {
+    background: #ffffff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+}
+
+.reasons h2, .reviews h2, .purchase h2 {
+    color: #000000;
+}
+
+.review {
+    display: flex;
+    align-items: center;
+    margin: 10px 0;
+}
+
+.review-img {
+    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    margin-right: 10px;
+}
+
+
+
+/*Отзывы начало*/
+.review {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin: 10px 0;
+    border-radius: 5px;
+    background: #fff;
+}
+
+.review h3 {
+    margin: 0;
+    font-size: 1.2em;
+}
+
+.review p {
+    margin: 5px 0;
+}
+
+form {
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+}
+
+form input, form textarea, form select {
+    margin: 5px 0;
+    padding: 10px;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+}
+#reviews-list {
+    max-height: 300px;
+    overflow-y: auto; 
+    border: 1px solid #ccc;
+    padding: 10px;
+    border-radius: 5px;
+    background: #fff;
+}
+
+button {
+    padding: 10px;
+    background-color: #28a745;
+    color: white;
+    border: none;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+.review-img {
+    max-width: 100px;
+    max-height: 100px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-top: 10px;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+.filter-sort {
+    margin-top: 20px;
+}
+/*Отзывы конец*/
+
+
+
+/*Тема начало*/
+body.dark {
+    background-color: rgba(18, 18, 18, 0.9);
+    color: #e0e0e0;
+}
+body.dark .review {
+    background: #333;
+    border-color: #555;
+}
+
+body.dark #reviews-list {
+    background: #333;
+    border-color: #555;
+}
+
+body.dark .header-content {
+    background: #2c2c2c;
+    color: #fff;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.463);
+}
+body.dark .reasons h2, body.dark .reviews h2, body.dark .purchase h2 {
+    color: #ffffff;
+}
+
+body.dark .carousel-control {
+    background: #ffffff; 
+    color: #fff; 
+    border: 1px solid #fff; 
+    padding: 15px;
+    cursor: pointer;
+}
+
+body.dark section {
+    background: #2c2c2c;
+    color: #e0e0e0;
+    box-shadow: 0 4px 8px rgba(255, 255, 255, 0.463);
+}
+
+body.dark .carousel-control {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark .buy-button {
+    background-color: #6c757d;
+}
+
+body.dark .carousel-control {
+    background-color: rgba(0, 0, 0, 0.8);
+}
+
+body.dark .buy-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.theme-toggle {
+    position: fixed;
+    top: 10px;
+    right: 10px;
+    background-color: #ffffff;
+    border: none;
+    padding: 15px;
+    cursor: pointer;
+    border-radius: 5px;
+    z-index: 1000;
+}
+/*Тема конец*/
+
+
+
+.theme-toggle.dark {
+    background-color: #333;
+    color: #fff;
+}
+
+.buy-button {
+    background-color: #28a745;
+    color: white;
+    border: none;
+    padding: 15px 30px;
+    font-size: 16px;
+    cursor: pointer;
+    border-radius: 5px;
+    margin-top: 10px;
+}
+
+.countdown {
+    font-size: 18px;
+    margin-top: 10px;
+    font-weight: bold;
+}
+
+@media (max-width: 600px) {
+    .header {
+        font-size: 18px;
+    }
+
+    .carousel img {
+        height: auto;
+    }
+
+    section {
+        width: 90%;
+    }
+
+    .ad {
+        font-size: 14px;
+    }
+}
