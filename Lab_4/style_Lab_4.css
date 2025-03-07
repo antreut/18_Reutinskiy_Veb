@@ -65,6 +65,7 @@ section {
 
 .carousel-control {
     background: #ffffff;
+    color: rgb(0, 0, 0);
     border: none;
     padding: 15px;
     cursor: pointer;
