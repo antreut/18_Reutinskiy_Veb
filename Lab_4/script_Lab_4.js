@@ -1,3 +1,10 @@
+document.addEventListener("DOMContentLoaded", () => {
+    if (localStorage.getItem("theme") === "dark") {
+        document.body.classList.add("dark");
+        document.getElementById("theme-toggle").classList.add("dark");
+    }
+});
+
 let currentSlide = 0;
 const slides = document.querySelectorAll('.carousel-item');
 const totalSlides = slides.length;
@@ -15,6 +22,7 @@ document.querySelector('.prev').addEventListener('click', () => {
 document.getElementById('theme-toggle').addEventListener('click', function () {
     document.body.classList.toggle('dark');
     this.classList.toggle('dark');
+    localStorage.setItem("theme", document.body.classList.contains("dark") ? "dark" : "light");
 });
 
 function updateCarousel() {
