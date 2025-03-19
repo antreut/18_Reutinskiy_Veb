@@ -1,0 +1,153 @@
+/* Блок общих стилей для страницы */
+body {
+    font-family: Arial, sans-serif;
+    background: #121212;
+    color: white;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    flex-direction: column;
+}
+
+/* Блок стилей для шапки сайта */
+header {
+    width: 100%;
+    background: rgba(255, 255, 255, 0.1);
+    padding: 10px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 1000;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+header button {
+    background: #7b7774;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    font-size: 14px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+header button:hover {
+    background: #a71a1a;
+    transform: scale(1.05);
+}
+
+/* Блок стилей для контейнера приложения */
+#app {
+    background: rgba(255, 255, 255, 0.1);
+    padding: 20px;
+    border-radius: 15px;
+    box-shadow: 0 0 20px rgba(255, 255, 255, 0.2);
+    text-align: center;
+    max-width: 600px;
+    width: 90%;
+    backdrop-filter: blur(10px);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin-top: 60px;
+}
+
+input, textarea {
+    width: 100%;
+    max-width: 300px;
+    padding: 8px;
+    margin: 5px 0;
+    border: 1px solid #7b7774;
+    border-radius: 5px;
+    background: rgba(255, 255, 255, 0.1);
+    color: white;
+}
+
+/* Блок стилей для редактируемых элементов */
+textarea {
+    height: 100px;
+    resize: vertical;
+}
+
+/* Блок стилей для секций */
+section {
+    display: none;
+}
+
+section:first-child {
+    display: block;
+}
+
+/* Блок стилей для изображений */
+img {
+    width: 100%;
+    max-width: 300px;
+    border-radius: 10px;
+    margin-bottom: 20px;
+    box-shadow: 0 5px 15px rgba(255, 255, 255, 0.2);
+}
+
+/* Блок стилей для кнопок */
+button {
+    background: #7b7774;
+    color: white;
+    border: none;
+    padding: 12px 25px;
+    font-size: 16px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: 0.3s;
+    margin-top: 20px;
+    display: block;
+    width: 600px;
+    text-align: center;
+}
+
+button:hover {
+    background: #5f3c3c;
+    transform: scale(1.05);
+}
+
+/* Блок стилей для слайдера Swiper */
+.swiper-container {
+    width: 100%;
+    max-width: 600px;
+    height: auto;
+    margin-bottom: 20px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.swiper-slide {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.swiper-slide img {
+    width: 100%;
+    max-width: 500px;
+    border-radius: 10px;
+}
+
+/* Блок стилей для заголовков и текста альбомов */
+h1, h2 {
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.album-title {
+    margin-top: 10px;
+    font-size: 14px;
+    color: #fff;
+    text-align: center;
+    text-transform: uppercase;
+}
