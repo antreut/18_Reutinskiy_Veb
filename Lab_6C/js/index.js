@@ -1,4 +1,3 @@
-// Базовый класс Block
 class Block {
     constructor(content) {
         this._content = content;
@@ -17,7 +16,6 @@ class Block {
     }
 }
 
-// Класс для секции приветствия
 class WelcomeBlock extends Block {
     getHTML() {
         if (isEditMode) {
@@ -39,7 +37,6 @@ class WelcomeBlock extends Block {
     }
 }
 
-// Класс для секции биографии
 class BiographyBlock extends Block {
     getHTML() {
         if (isEditMode) {
@@ -83,7 +80,6 @@ class BiographyBlock extends Block {
     }
 }
 
-// Класс для секции дискографии
 class DiscographyBlock extends Block {
     getHTML() {
         if (isEditMode) {
@@ -142,7 +138,6 @@ class DiscographyBlock extends Block {
     }
 }
 
-// Данные для блоков
 const welcomeData = {
     title: "Добро пожаловать на сайт Travis Scott",
     image: "https://cdn1.ozone.ru/s3/multimedia-r/c600/6254338299.jpg"
@@ -166,15 +161,12 @@ const discographyData = {
     ]
 };
 
-// Глобальные экземпляры блоков
 const welcome = new WelcomeBlock(welcomeData);
 const biography = new BiographyBlock(biographyData);
 const discography = new DiscographyBlock(discographyData);
 
-// Глобальная переменная для режима редактирования
 let isEditMode = false;
 
-// Функция переключения секций
 function showSection(sectionId) {
     document.querySelectorAll('section').forEach(section => {
         section.classList.remove('active');
@@ -182,7 +174,6 @@ function showSection(sectionId) {
     document.getElementById(sectionId).classList.add('active');
 }
 
-// Функция отображения деталей альбома
 function showAlbumDetails(index) {
     const album = discographyData.albums[index];
     if (isEditMode) {
@@ -206,7 +197,6 @@ function showAlbumDetails(index) {
     showSection("album-details");
 }
 
-// Функции обновления данных
 function updateWelcome() {
     const title = document.getElementById("welcome-title-input").value;
     const image = document.getElementById("welcome-image-input").value;
@@ -235,18 +225,15 @@ function updateDiscography() {
     rebuildSite();
 }
 
-// Функция переключения режима редактирования
 function toggleEditMode() {
     isEditMode = !isEditMode;
     rebuildSite();
 }
 
-// Показать заглушку загрузки
 function showLoader(container) {
     container.innerHTML = '<p class="loader">Загрузка...</p>';
 }
 
-// API 1: Пользователи (JSONPlaceholder)
 async function fetchUsers() {
     const container = document.getElementById('api1-content');
     showLoader(container);
@@ -284,7 +271,6 @@ async function deleteUser(id) {
     fetchUsers();
 }
 
-// API 2: Посты (JSONPlaceholder)
 async function fetchPosts() {
     const container = document.getElementById('api2-content');
     showLoader(container);
@@ -314,7 +300,6 @@ async function patchPost(id) {
     fetchPosts();
 }
 
-// API 3: Новости (Reqres)
 async function fetchNews() {
     const container = document.getElementById('api3-content');
     showLoader(container);
@@ -345,7 +330,6 @@ async function createNews() {
     fetchNews();
 }
 
-// Функция сборки сайта
 function rebuildSite() {
     document.getElementById('app').innerHTML = `
         ${welcome.getHTML()}
@@ -365,7 +349,6 @@ function rebuildSite() {
         </section>
     `;
 
-    // Инициализация Swiper только в режиме просмотра
     if (!isEditMode) {
         document.querySelectorAll('.swiper-container').forEach(container => {
             new Swiper(container, {
@@ -378,7 +361,6 @@ function rebuildSite() {
         });
     }
 
-    // Привязка событий
     document.getElementById('toggle-edit').addEventListener('click', toggleEditMode);
     document.getElementById('welcome-next-btn')?.addEventListener('click', () => showSection('biography'));
     document.getElementById('bio-next-btn')?.addEventListener('click', () => showSection('discography'));
@@ -403,7 +385,6 @@ function rebuildSite() {
         });
     }
 
-    // Навигация через меню
     document.querySelectorAll('.nav-menu a').forEach(link => {
         link.addEventListener('click', (e) => {
             e.preventDefault();
@@ -418,5 +399,4 @@ function rebuildSite() {
     showSection('welcome');
 }
 
-// Запуск сборки сайта
 document.addEventListener("DOMContentLoaded", rebuildSite);
